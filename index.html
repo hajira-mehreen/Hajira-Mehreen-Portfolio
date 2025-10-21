@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hajira Mehreen - Portfolio</title>
-    <link rel="shortcut icon" href="logo.png" type="image/x-icon">    
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -69,6 +70,10 @@
             width: 100%;
         }
 
+        .nav-link.active {
+            color: var(--accent-blue) !important;
+        }
+
         /* Home Section */
         #home {
             min-height: 100vh;
@@ -109,13 +114,13 @@
         .typing-effect {
             font-size: 1.5rem;
             color: var(--text-gray);
-            overflow: hidden;
             border-right: 3px solid var(--accent-purple);
             white-space: nowrap;
             margin: 0 auto;
             display: inline-block;
-            width: 0ch;
-            animation: typing 4s steps(28) infinite alternate, blink 0.75s step-end infinite;
+            width: auto;
+            padding-right: 6px;
+            animation: blink 0.75s step-end infinite;
         }
 
         @keyframes typing {
@@ -923,6 +928,26 @@
         html {
             scroll-behavior: smooth;
         }
+
+        /* Fade-up on scroll (initial state) */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 600ms cubic-bezier(.2, .9, .2, 1), transform 600ms cubic-bezier(.2, .9, .2, 1);
+            will-change: opacity, transform;
+        }
+
+        .fade-up.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .fade-up {
+                transition: none;
+                transform: none;
+            }
+        }
     </style>
 </head>
 
@@ -974,7 +999,7 @@
                 <div class="home-image">
                     <div class="profile-image-wrapper">
                         <div class="profile-image">
-                            <img src="home.jpg" alt="">
+                            <img src="images/home.jpg" alt="">
                         </div>
                     </div>
                 </div>
@@ -988,7 +1013,7 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="home1.jpg" alt="">
+                    <img src="images/home1.jpg" alt="">
                 </div>
                 <div class="about-text">
                     <p>Hello! I'm a passionate developer with a keen eye for design and a love for creating innovative
@@ -1107,7 +1132,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="Autono-web.png" alt="autono">
+                            <img src="images/Autono-web.png" alt="autono">
                         </div>
                         <div class="project-content">
                             <h5>Autono Website</h5>
@@ -1123,7 +1148,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="Luana-Diamonds.png" alt="Luana">
+                            <img src="images/Luana-Diamonds.png" alt="Luana">
                         </div>
                         <div class="project-content">
                             <h5>Luana Diamonds</h5>
@@ -1139,7 +1164,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="Belora.png" alt="belora">
+                            <img src="images/Belora.png" alt="belora">
                         </div>
                         <div class="project-content">
                             <h5>Belora Authentic Restaurant</h5>
@@ -1155,7 +1180,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="furnifi.png" alt="furnifi">
+                            <img src="images/furnifi.png" alt="furnifi">
                         </div>
                         <div class="project-content">
                             <h5>Furnifi.</h5>
@@ -1171,7 +1196,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="currency-converter.png" alt="currency-converter">
+                            <img src="images/currency-converter.png" alt="currency-converter">
                         </div>
                         <div class="project-content">
                             <h5>Currency Converter</h5>
@@ -1187,7 +1212,40 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="soleelite.png" alt="shoe-web">
+                            <img src=" images/Task manager.png" alt="Task Manager">
+                        </div>
+                        <div class="project-content">
+                            <h5>Task Manager</h5>
+                            <p>Stay organized and boost your productivity with Task Manager — your ultimate solution for
+                                task management.
+                                Effortlessly create, track, and manage tasks to achieve your goals.</p>
+                            <a href="https://task-manager-pr.netlify.app/" target="_blank" class="btn-live-demo">
+                                Live Demo <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/AI-hub.png" alt="AI-web">
+                        </div>
+                        <div class="project-content">
+                            <h5>AI Hub - Productivity Tools</h5>
+                            <p>Unlock your potential with AI Hub — your go-to platform for cutting-edge productivity
+                                tools.
+                                Streamline your workflow, enhance collaboration, and achieve more with AI-driven
+                                solutions.</p>
+                            <a href="https://ai-hub-productivity.netlify.app/" target="_blank" class="btn-live-demo">
+                                Live Demo <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/soleelite.png" alt="shoe-web">
                         </div>
                         <div class="project-content">
                             <h5>Sole Elite-Shoe website</h5>
@@ -1199,10 +1257,24 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/meal-planner.png" alt="meal-planner">
+                        </div>
+                        <div class="project-content">
+                            <h5>Sole Elite-Shoe website</h5>
+                            <p>Plan your meals smartly and stay healthy every day.Your personal assistant for balanced,
+                                delicious and organized eating.</p>
+                            <a href="https://meal-planner-p.netlify.app/" target="_blank" class="btn-live-demo">
+                                Live Demo <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
     <!-- Certificates Section -->
     <section id="certificates">
         <div class="container">
@@ -1211,7 +1283,7 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="certificate-card">
                         <div class="certificate-image">
-                            <img src="intro-cer-1.png" alt="certificate">
+                            <img src="images/intro-cer-1.png" alt="certificate">
                         </div>
                         <div class="certificate-content">
                             <h5>Intro to Python Certificate</h5>
@@ -1226,7 +1298,7 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="certificate-card">
                         <div class="certificate-image">
-                            <img src="wind-cer-1.png" alt="certificate">
+                            <img src="images/wind-cer-1.png" alt="certificate">
                         </div>
                         <div class="certificate-content">
                             <h5> Windsurf Vibe Coding </h5>
@@ -1242,7 +1314,7 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="certificate-card">
                         <div class="certificate-image">
-                            <img src="chat-cer-3.png" alt="certificate">
+                            <img src="images/chat-cer-3.png" alt="certificate">
                         </div>
                         <div class="certificate-content">
                             <h5>Chatgpt as Assistant Certificate</h5>
@@ -1258,7 +1330,7 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="certificate-card">
                         <div class="certificate-image">
-                            <img src="Agent-cer-4.png" alt="certificate">
+                            <img src="images/Agent-cer-4.png" alt="certificate">
                         </div>
                         <div class="certificate-content">
                             <h5>Agentic AI pattern Certificate</h5>
@@ -1274,7 +1346,7 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="certificate-card">
                         <div class="certificate-image">
-                            <img src="deepseek-cer-5.png" alt="certificate">
+                            <img src="images/deepseek-cer-5.png" alt="certificate">
                         </div>
                         <div class="certificate-content">
                             <h5>Deepseek AI Certification</h5>
@@ -1290,7 +1362,7 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="certificate-card">
                         <div class="certificate-image">
-                            <img src="Business-cer-6.png" alt="certificate">
+                            <img src="images/Business-cer-6.png" alt="certificate">
                         </div>
                         <div class="certificate-content">
                             <h5>Intro To Business Analytics</h5>
@@ -1445,14 +1517,151 @@
                 <a href="https://github.com/hajira-mehreen/-" target="_blank"><i class="fab fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/hajira-mehreen-101813347/" target="_blank"><i
                         class="fab fa-linkedin"></i></a>
-                <a href="mailto:hajimehr1308@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
-                <a href=""><i class="fab fa-instagram"></i></a>
+                <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=hajimehr1308@gmail.com"
+                    target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
             <p class="copyright">&copy; 2025 Hajira Mehreen. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Typing effect (multiple phrases)
+        (function () {
+            const el = document.querySelector('.typing-effect');
+            if (!el) return;
+            const phrases = [
+                'Front End Developer & Designer',
+                'React | JavaScript | CSS',
+                'Building responsive, beautiful websites',
+                'UI/UX enthusiast & problem solver'
+            ];
+
+            let phraseIndex = 0;
+            let charIndex = 0;
+            let typing = true;
+            const typeSpeed = 60;
+            const eraseSpeed = 30;
+            const delayBetween = 1800;
+
+            function type() {
+                const current = phrases[phraseIndex];
+                if (typing) {
+                    el.textContent = current.slice(0, charIndex + 1);
+                    charIndex++;
+                    if (charIndex === current.length) {
+                        typing = false;
+                        setTimeout(type, delayBetween);
+                    } else {
+                        setTimeout(type, typeSpeed);
+                    }
+                } else {
+                    el.textContent = current.slice(0, charIndex - 1);
+                    charIndex--;
+                    if (charIndex === 0) {
+                        typing = true;
+                        phraseIndex = (phraseIndex + 1) % phrases.length;
+                        setTimeout(type, typeSpeed);
+                    } else {
+                        setTimeout(type, eraseSpeed);
+                    }
+                }
+            }
+
+            // Start typing after a small delay
+            setTimeout(type, 600);
+        })();
+
+        // Active navbar link on scroll
+        (function () {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            function onScroll() {
+                const scrollPos = window.scrollY + window.innerHeight / 3;
+                let currentId = '';
+                sections.forEach(sec => {
+                    const top = sec.offsetTop;
+                    const height = sec.offsetHeight;
+                    if (scrollPos >= top && scrollPos < top + height) {
+                        currentId = sec.id;
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === '#' + currentId);
+                });
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            // Run once on load
+            onScroll();
+        })();
+
+        // Contact form demo handler
+        (function () {
+            const form = document.querySelector('#contact form');
+            if (!form) return;
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                // Simple client-side validation
+                const name = form.querySelector('input[type="text"]').value.trim();
+                const email = form.querySelector('input[type="email"]').value.trim();
+                const msg = form.querySelector('textarea').value.trim();
+                if (!name || !email || !msg) {
+                    alert('Please fill all the fields.');
+                    return;
+                }
+
+                // Demo behavior: show a success message and reset form
+                alert('Thank you, ' + name + '! Your message has been sent (demo).');
+                form.reset();
+            });
+        })();
+
+        // Fade-up on scroll using IntersectionObserver
+        (function () {
+            const selector = [
+                'section',
+                '.passion-item',
+                '.service-card',
+                '.project-card',
+                '.certificate-card',
+                '.testimonial-card',
+                '.study-item'
+            ].join(', ');
+
+            const nodes = Array.from(document.querySelectorAll(selector));
+
+            // Apply fade-up class to each target (avoid adding to elements already present)
+            nodes.forEach((n, i) => {
+                if (!n.classList.contains('fade-up')) {
+                    n.classList.add('fade-up');
+                    // optional stagger for grid children
+                    if (n.parentElement && n.parentElement.classList.contains('passion-grid')) {
+                        n.style.transitionDelay = (i % 4) * 80 + 'ms';
+                    }
+                }
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        // If you want each element to animate only once, unobserve it
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: '0px 0px -10% 0px',
+                threshold: 0.12
+            });
+
+            nodes.forEach(n => observer.observe(n));
+        })();
+    </script>
 </body>
 
 </html>
