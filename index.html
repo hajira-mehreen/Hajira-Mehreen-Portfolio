@@ -1654,7 +1654,6 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('in-view');
-                        // If you want each element to animate only once, unobserve it
                         observer.unobserve(entry.target);
                     }
                 });
